@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        // Beginning of the script --------------------------------
+
+        function start() {         
+            document.getElementById("printarea").innerHTML = "";
+            var notex = document.getElementById("notex").value;
+            var notey = document.getElementById("notey").value;
+            var tempo = document.getElementById("tempo").value;
+            var newnotex = document.getElementById("newnotex").value;
+            var newnotey = document.getElementById("newnotey").value;
+            
+            var vastaus = tempo/(notex/notey)*(newnotex/newnotey);
+
+            document.getElementById("printarea").innerHTML = vastaus;
+        }
+        
+        // End of the script --------------------------------------
+    </script>  
+
+</head>
+<body>
+
+    <h2>Lightern's tempo calculator</h2>
+    <form id="inputform">
+        Please input note:<br>
+        <input type="text" id="notex" size="1" value="1"> / <input type="text" id="notey" size="1" value="12"><br><br>
+        Please input tempo:<br>
+        <input type="text" id="tempo" size="5" value="200"><br><br><br>
+        Please input new note:<br>
+        <input type="text" id="newnotex" size="1" value="1"> / <input type="text" id="newnotey" size="1" value="16"><br><br>
+    </form>
+
+    <button onclick="start()">Calculate tempo</button>
+
+    <p id="printarea"></p>
+
+</body>
+</html>
